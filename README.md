@@ -19,13 +19,13 @@ daily-reports/
 │
 ├── templates/
 │   └── daily-template.md          # 日報のテンプレートファイル
-├── commitlint.config.ts           # Commitlintの設定ファイル
+├── commitlint.config.js           # Commitlintの設定ファイル
 ├── package-lock.json
 ├── package.json
 └── README.md
 ```
 ## ブランチ運用
-- main/master
+- main
 - feature/日報名ブランチ 例：**feature/daily-report-2024-01-01**
 
 ## 日報作成手順
@@ -50,10 +50,22 @@ cp templates/daily-template.md reports/2024/01/2024-01-01.md
 ``` 
 docs: Add daily report for 2024/01/01
 ```
+6. ローカルで作業しているブランチをリモートリポジトリにpush  
+```
+git push origin feature/daily-report-2024-01-01
+```
 
-6. close #<Issue番号>をPullRequestに記述して作成  
+7. close #<Issue番号>をPullRequestに記述して作成  
+
+8. マージ済みのブランチを削除  
+削除前にgit log --onelineでプッシュされているか確認  
+- ローカルブランチの削除
+``` 
+git branch -d feature/daily-report-2024-01-01
+```
 
 ### husky、Github Actionsについて
 勉強の一環として導入（個人の日報であるため、導入はしなくても良い）
 - husky: コミットメッセージのフォーマットをチェックする
 - Github Actions: PRに含まれたmdファイルが指定されたフォーマットに従っているかをチェックする
+
