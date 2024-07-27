@@ -22,3 +22,14 @@ daily-reports/
 ├── package.json
 └── README.md
 ```
+## ブランチ運用
+- main/master
+- feature/日報名ブランチ 例：**feature/daily-report-2024-01-01**
+
+## 日報作成手順
+1. 新しいbrunchの作成（以下に例を記述）
+``` git checkout -b feature/daily-report-2024-01-01 ```
+
+2. テンプレートファイルをコピーして、新しい日報を作成
+``` cp templates/daily-template.md reports/2024/01/2024-01-01.md ```
+
