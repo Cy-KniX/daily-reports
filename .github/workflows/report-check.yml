@@ -18,19 +18,19 @@ jobs:
         for file in $(git diff --name-only ${{ github.base_ref }} ${{ github.head_ref }}); do
           if [[ $file == reports/**/*.md ]]; then
             echo "Checking $file"
-            if ! grep -q "^## 今週の目標勉強時間" "$file"; then
-              echo "Error: Missing '## 今週の目標勉強時間' in $file"
+            if ! grep -q "^### 今週の目標勉強時間" "$file"; then
+              echo "Error: Missing '### 今週の目標勉強時間' in $file"
               exit 1
             fi
-            if ! grep -q "^## 今日の勉強時間" "$file"; then
-              echo "Error: Missing '## 今日の勉強時間' in $file"
+            if ! grep -q "^### 今日の勉強時間" "$file"; then
+              echo "Error: Missing '### 今日の勉強時間' in $file"
               exit 1
             fi
             if ! grep -q "^## 学習内容" "$file"; then
               echo "Error: Missing '## 学習内容' in $file"
               exit 1
             fi
-            if ! grep -q "^## 学習メモ" "$file"; then
+            if ! grep -q "^### 学習メモ" "$file"; then
               echo "Error: Missing '## 学習メモ' in $file"
               exit 1
             fi
