@@ -26,7 +26,7 @@ daily-reports/
 ```
 ## ブランチ運用
 - main
-- feature/日報名ブランチ 例：**feature/daily-report-2024-01-01**
+- feature/<Issue番号>-日報名ブランチ 例：**feature/#1-daily-report-2024-01-01**
 
 ## 日報作成手順
 1. 作業開始時に今日の日付で新しいIssueを作成する 例: **2024-01-01**
