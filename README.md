@@ -36,7 +36,7 @@ daily-reports/
 3. 新しいbrunchの作成  
 例:
 ``` 
-git checkout -b feature/daily-report-2024-01-01
+git checkout -b feature/#1-daily-report-2024-01-01
  ```
 
 4. テンプレートファイルをコピーして、新しい日報を作成  
