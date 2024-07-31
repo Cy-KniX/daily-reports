@@ -52,17 +52,25 @@ docs: Add daily report for 2024/01/01
 ```
 6. ローカルで作業しているブランチをリモートリポジトリにpush  
 ```
-git push origin feature/daily-report-2024-01-01
+git push origin feature/#1-daily-report-2024-01-01
 ```
 
 7. close #<Issue番号>をPullRequestに記述して作成  
 
 8. マージ済みのブランチを削除  
 
-この作業についてはpost-mergeフックを使用して、ブランチを自動削除するため行う必要なし!
-- ローカルブランチの削除
+ローカルでマージしブランチを削除する場合  
+```
+git checkout main
+
+# ローカルでマージするとpost-mergeフックによりブランチを自動削除
+git merge feature/#1-daily-report-2024-01-01
+```
+github上でマージをした場合には以下のコマンドでブランチを削除
+- ローカルブランチの削除  
+例：
 ``` 
-git branch -d feature/daily-report-2024-01-01
+git branch -d feature/#1-daily-report-2024-01-01
 ```
 
 ### husky、Github Actionsについて
