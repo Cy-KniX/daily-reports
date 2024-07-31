@@ -58,7 +58,8 @@ git push origin feature/daily-report-2024-01-01
 7. close #<Issue番号>をPullRequestに記述して作成  
 
 8. マージ済みのブランチを削除  
-削除前にgit log --onelineでプッシュされているか確認  
+
+この作業についてはpost-mergeフックを使用して、ブランチを自動削除するため行う必要なし!
 - ローカルブランチの削除
 ``` 
 git branch -d feature/daily-report-2024-01-01
