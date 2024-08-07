@@ -45,7 +45,7 @@ git checkout -b feature/#1-daily-report-2024-01-01
 cp templates/daily-template.md reports/2024/01/2024-01-01.md
 ```
 
-5. commitlintで指定した規則に従いコミットメッセージを作成  
+5. commitlintで指定した規則に従いコミットメッセージを作成(typeとその説明については下記に記述)  
 コミットメッセージ例:
 ``` 
 docs: Add daily report for 2024/01/01
@@ -54,7 +54,14 @@ docs: Add daily report for 2024/01/01
 ```
 git push origin feature/#1-daily-report-2024-01-01
 ```
+ターミナルから以下の設定をすればgit pushで現在作業中のブランチからpushしてくれるので便利
+```
+git config --global push.default current
 
+// 上記の設定をすると以下のコマンドだけで良い
+
+git push
+```
 7. close #<Issue番号>をPullRequestに記述して作成  
 
 8. マージ済みのブランチを削除  
@@ -78,3 +85,17 @@ git branch -d feature/#1-daily-report-2024-01-01
 - husky: コミットメッセージのフォーマットをチェックする
 - Github Actions: PRに含まれたmdファイルが指定されたフォーマットに従っているかをチェックする
 
+### コミットメッセージのtypeについて
+以下のルールに従ってコミットメッセージのtypeを記述  
+
+- **feat**: 新機能の追加（例: `feat: add user login functionality`）
+- **fix**: バグの修正（例: `fix: resolve issue with login redirect`）
+- **docs**: ドキュメントのみの変更（例: `docs: update README with new API details`）
+- **style**: コードの動作に影響しない変更（例: `style: format code with Prettier`）
+- **refactor**: バグの修正や機能の追加ではないコードのリファクタリング（例: `refactor: change structure of user service`）
+- **perf**: パフォーマンスを向上させるための変更（例: `perf: improve query performance on user list`）
+- **test**: テストの追加や修正（例: `test: add unit tests for user service`）
+- **build**: ビルドシステムや外部依存に関する変更（例: `build: update webpack configuration`）
+- **ci**: CI設定ファイルとスクリプトの変更（例: `ci: add GitHub Actions configuration`）
+- **chore**: その他の変更（例: `chore: update dependencies`）
+- **revert**: 以前のコミットを取り消す（例: `revert: revert "feat: add user login functionality"`）
