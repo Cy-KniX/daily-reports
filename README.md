@@ -4,9 +4,7 @@
 ## ディレクトリ構成
 ```
 daily-reports/
-├── .github/
-│   └── workflows/
-│       └── report-check.yml       # GitHub Actionsによる日報の自動チェック設定
+│ 
 ├── .husky/
 │   ├── commit-msg                 # Commitlintを使用したコミットメッセージのフォーマットチェック
 │   └── pre-commit
@@ -83,7 +81,7 @@ git branch -d feature/#1-daily-report-2024-01-01
 ### husky、Github Actionsについて
 勉強の一環として導入（個人の日報であるため、導入はしなくても良い）
 - husky: コミットメッセージのフォーマットをチェックする
-- Github Actions: PRに含まれたmdファイルが指定されたフォーマットに従っているかをチェックする
+
 
 ### コミットメッセージのtypeについて
 以下のルールに従ってコミットメッセージのtypeを記述  
